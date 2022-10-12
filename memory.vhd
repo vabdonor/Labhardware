@@ -2,6 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+
 entity memory is
     generic (
         addr_width: natural := 16;
@@ -19,23 +20,20 @@ entity memory is
  end entity; 
 
  architecture behavioral of memory is
-    subtype word is std_logic_vector((data_width-1) downto 0);
-    type t_mem is array (0 to 2**data_width - 1) of word;
-
-    signal mem : t_mem;
-    signal address: std_logic_vector(data_width-1 downto 0);
+    type mem_type is array((2**data_width - 1)  downto 0) of std_logic_vector((data_width-1) downto 0);
+    signal mem : mem_type;
 
     begin 
-    
-        mem_proc: process(clock) is
+        process(clock) is
         begin
-            if(rising_edge(clock)) then
+            if(clock'event and clock = '1') then
                 if(data_write = '1') then
-                    mem(to_integer(unsigned(address))) <= data_in;
-                end if;
-                data_out <= mem(to_integer(unsigned(address)));
+                    mem(to_integer(unsigned(data_addr))) <= data_in;
+                else
+                data_out <= mem(to_integer(unsigned(data_addr)));
             end if;
-     end process mem_proc;
+        end if;
+     end process;
 
 end  behavioral;
 
