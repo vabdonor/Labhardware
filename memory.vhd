@@ -24,7 +24,7 @@ entity memory is
     signal mem : mem_type;
 
     begin 
-        process(clock) is
+        mem_process: process(clock) is
         begin
             if(clock'event and clock = '1') then
                 if(data_write = '1') then
@@ -33,7 +33,7 @@ entity memory is
                 data_out <= mem(to_integer(unsigned(data_addr)));
             end if;
         end if;
-     end process;
+     end process mem_process;
 
 end  behavioral;
 
