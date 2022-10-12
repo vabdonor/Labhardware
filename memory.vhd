@@ -23,18 +23,18 @@ entity memory is
     type t_mem is array (0 to 2**data_width - 1) of word;
 
     signal mem : t_mem;
-    signal address: std_logic_vector(data_width-1 downto 0);
-
+ 
     begin 
     
         mem_proc: process(clock) is
         begin
-            if(rising_edge(clock)) then
+            if(clock'event and clock = '1') then
                 if(data_write = '1') then
                     mem(to_integer(unsigned(address))) <= data_in;
-                end if;
+                 else
                 data_out <= mem(to_integer(unsigned(address)));
             end if;
+          end if;
      end process mem_proc;
 
 end  behavioral;
