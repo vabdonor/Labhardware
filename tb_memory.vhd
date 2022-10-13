@@ -28,7 +28,7 @@ begin
             wait for clock_period/2;
         end process;
 
-        estimulo: process
+        estimulo: process 
         begin
 
             wait for 100 ns;

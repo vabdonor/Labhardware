@@ -26,8 +26,8 @@ entity memory is
     begin 
         mem_process: process(clock) is
         begin
-            if(clock'event and clock = '1') then
-                if(data_write = '1') then
+            if(rising_edge(clock)) then
+                if(data_write = '1' and data_read = '0') then
                     mem(to_integer(unsigned(data_addr))) <= data_in;
                 else
                 data_out <= mem(to_integer(unsigned(data_addr)));
