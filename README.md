@@ -8,6 +8,8 @@
 ## Versão Atual
 
 - **v1**
+## Pré Requisitos
+- vhdl instalado na máquina
 
 ## Execução
 - ghdl -a codec.vhd
