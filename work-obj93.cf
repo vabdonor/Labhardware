@@ -1,7 +1,7 @@
 v 4
-file . "tb_memory.vhd" "b425a3c6f91a9d5fea780b66ab16f8465d3d4090" "20221013152958.775":
-  entity tb_memory at 1( 0) + 0 on 49;
-  architecture mixed of tb_memory at 8( 103) + 0 on 50;
-file . "memory.vhd" "6a2d586763103edeb3a32c0386a333e8b8a5befb" "20221013152937.684":
-  entity memory at 1( 0) + 0 on 47;
-  architecture behavioral of memory at 22( 524) + 1 on 48;
+file . "tb_memory.vhd" "3233d77af2f2dffaa2dd49199f862a8a8f902f27" "20221016221347.434":
+  entity tb_memory at 1( 0) + 0 on 69;
+  architecture mixed of tb_memory at 8( 103) + 0 on 70;
+file . "memory.vhd" "a4327c00b8159742be8f8780946ab60a31dc8cb0" "20221016221331.148":
+  entity memory at 1( 0) + 0 on 67;
+  architecture dataflow of memory at 22( 524) + 1 on 68;

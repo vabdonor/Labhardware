@@ -19,23 +19,23 @@ entity memory is
     );
  end entity; 
 
- architecture behavioral of memory is
+ architecture dataflow of memory is
     type mem_type is array((2**data_width - 1)  downto 0) of std_logic_vector((data_width-1) downto 0);
     signal mem : mem_type;
 
     begin 
-        mem_process: process(clock) is
+       process(clock) 
         begin
-            if(rising_edge(clock)) then
+            if(clock'event and clock = '1') then
                 if(data_write = '1' and data_read = '0') then
                     mem(to_integer(unsigned(data_addr))) <= data_in;
                 else
-                data_out <= mem(to_integer(unsigned(data_addr)));
+                    data_out <= mem(to_integer(unsigned(data_addr)));
+                end if;
             end if;
-        end if;
-     end process mem_process;
+        end process;
 
-end  behavioral;
+end dataflow;
 
 
 

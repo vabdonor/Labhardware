@@ -16,7 +16,7 @@ architecture mixed of tb_memory is
     constant clock_period: time := 10 ns;
 
 begin
-    mem : entity work.memory(behavioral)
+    mem : entity work.memory(dataflow)
         generic map(addr_width, data_width)
         port map(clock => clok, data_read => d_read, data_write=> d_write, data_addr => d_addr, data_in => d_in, data_out => d_out);
 
@@ -66,8 +66,10 @@ begin
             d_read <= '1';
             --d_addr <= "1111";
             d_in <= "00110011";
+
+            
   
             wait;
     end process;
- end architecture;
+ end mixed;
            
