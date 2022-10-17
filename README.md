@@ -10,7 +10,7 @@
 - **v1**
 
 ## Execução
--ghdl -a codec.vhd
--ghdl -e codec
--ghdl -r codec
--ghdl -a <nome do arquivo>.vhd
+- ghdl -a codec.vhd
+- ghdl -e codec
+- ghdl -r codec
+- ghdl -a <nome do arquivo>.vhd
