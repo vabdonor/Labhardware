@@ -3,10 +3,14 @@
 
 ## Sobre
 
-- Projeto de um compilador implementado em java com JFlex e JavaCUP.
-- 
+- Projeto de Laboratório de Hardware
+
+## Versão Atual
+
+- **v1**
+
 ## Execução
 -ghdl -a codec.vhd
 -ghdl -e codec
 -ghdl -r codec
--ghdl -a <nome do arquivi>.vhd
+-ghdl -a <nome do arquivo>.vhd
